@@ -43,4 +43,4 @@ pagehelper:
   params: count=countSql
     
 env:
-  test
+  test-release
