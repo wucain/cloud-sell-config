@@ -1,0 +1,21 @@
+﻿server:
+  port: 8080
+  
+zuul:
+  routes:
+    #规则名称(/myproduct/product/list--->/micro-product/product/list)
+    myProduct:
+      path: /myproduct/**
+      serviceId: micro-product
+      #敏感头的过滤
+      sensitiveHeaders:
+    #简洁写法
+    #micro-product: /myproduct/**
+  #排除某些路由
+  ignored-patterns:
+    - /**/product/add
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
